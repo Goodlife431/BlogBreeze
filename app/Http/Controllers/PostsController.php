@@ -43,23 +43,23 @@ class postsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function store(PostFormRequest $request)
-    // {
+    public function store(PostFormRequest $request)
+    {
         
-    //     $request->validated();
+        $request->validated();
         
 
-    //     Post::create([
-    //         'title'=> $request->title,
-    //         'excerpt'=> $request->excerpt,
-    //         'body'=> $request->body,
-    //         'image_path'=> $this->storeImages($request),
-    //         'is_published'=> $request->is_published === 'on',
-    //         'min_to_read'=> $request->min_to_read
-    //     ]);
+        Post::create([
+            'title'=> $request->title,
+            'excerpt'=> $request->excerpt,
+            'body'=> $request->body,
+            'image_path'=> $this->storeImages($request),
+            'is_published'=> $request->is_published === 'on',
+            'min_to_read'=> $request->min_to_read
+        ]);
 
-    //     return redirect(route('blog.index'));
-    // }
+        return redirect(route('blog.index'));
+    }
 
     /**
      * Display the specified resource.
@@ -84,14 +84,14 @@ class postsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(PostFormRequest $request, $id)
-    // {
-    //     $request->validated();
+    public function update(PostFormRequest $request, $id)
+    {
+        $request->validated();
     
-    //     Post::where('id', $id)->update($request->except(['_method', '_token']));
+        Post::where('id', $id)->update($request->except(['_method', '_token']));
     
-    //     return redirect(route('blog.index'));
-    // }
+        return redirect(route('blog.index'));
+    }
     
     /**
      * Remove the specified resource from storage.
