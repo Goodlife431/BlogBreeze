@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
  // Replace with your Post model
 
 
-class postsController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
